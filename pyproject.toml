@@ -27,6 +27,7 @@ line-length = 120
 exclude = '''
     venv/
     tests/
+    pyproject.toml
 '''
 
 [tool.isort]
@@ -40,11 +41,10 @@ known_first_party = ["todolist","core"]
 skip = [".git","venv","tests","__init__.py"]
 
 [tool.mypy]
-python_version = 3.12
+python_version = "3.12"
 disallow_untyped_defs = True
 ignore_missing_imports = True
-exclude = .env|venv.*|migrations.*
-disallow_untyped_defs=True
+exclude = [".git","venv","tests","__init__.py"]
 no_implicit_optional=True
 warn_return_any=True
 warn_unreachable=True
