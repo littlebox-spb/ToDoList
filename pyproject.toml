@@ -12,8 +12,27 @@ django = "^5.1.1"
 python-dotenv = "^1.0.1"
 pre-commit-update = "^0.5.0"
 pre-commit = "^3.8.0"
+black = "^24.8.0"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+exclude = '''
+    venv/
+    tests/
+'''
+
+[tool.isort]
+profile = "django"
+include_trailing_comma = true
+line_length = 120
+lines_after_imports = 2
+multi_line_output = 2
+know_first_party = ["todolist","core"]
+skip = "__init__.py"
