@@ -3,4 +3,5 @@ from django.db import models
 # Create your models here.
 
 
-""" rf """
+class Task(models.Model):
+    pass
