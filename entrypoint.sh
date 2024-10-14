@@ -1,9 +1,8 @@
 #!/bin/bash
-set -e
-cd /opt/todolist || exit 1
-python manage.py migrate
+python manage.py migrate --check
 status=$?
-if [[ $status != 0 ]]; then
+if [ $status != 0 ];
+then
   python manage.py migrate
 fi
 exec "$@"
