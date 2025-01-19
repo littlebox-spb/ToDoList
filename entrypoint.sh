@@ -1,8 +1,7 @@
 #!/bin/bash
-cd /opt/todolist || exit 1
-python manage.py makemigrations
-status=$?
-if [[ $status != 0 ]]; then
-python manage.py migrate
-fi
-exec "$@"
+python manage.py migrate --check # Проверка миграций
+status=$? # Проверяем наличие новых миграций
+if [[ $status != 0 ]]; then # Если есть новые миграции
+  python manage.py migrate # Выполнение миграций
+fi # Завершаем условие
+exec "$@" # Запуск основной команды

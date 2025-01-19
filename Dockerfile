@@ -19,7 +19,7 @@ COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x entrypoint.sh  # Обеспечьте права на выполнение скрипта
 
 USER api
-#ENTRYPOINT ["bash", "entrypoint.sh"]
+ENTRYPOINT ["bash", "entrypoint.sh"]
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 EXPOSE 8000
