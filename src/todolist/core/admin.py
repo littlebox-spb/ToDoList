@@ -1,12 +1,10 @@
-# from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib import admin
+
+from .models import User
 
 
-# from core.models import User
-
-
-# @admin.register(User)
-class UserAdmin(BaseUserAdmin):
+@admin.register(User)
+class UserAdmin(User):
     """Какие поля отображаются на странице списка для изменения из интерфейса администратора"""
 
     list_display = (
