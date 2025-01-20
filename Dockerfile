@@ -6,7 +6,7 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_NO_CACHE_DIR=off \
     PYTHONPATH=/opt/todolist
 
-RUN pip install "poetry==1.6.1"
+RUN pip install "poetry==1.7.1"
 RUN groupadd --system service && useradd --system -g service api
 
 COPY poetry.lock pyproject.toml ./

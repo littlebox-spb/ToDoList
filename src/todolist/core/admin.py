@@ -4,7 +4,7 @@ from .models import User
 
 
 @admin.register(User)
-class UserAdmin(User):
+class UserAdmin(admin.ModelAdmin):
     """Какие поля отображаются на странице списка для изменения из интерфейса администратора"""
 
     list_display = (
